@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://b001x1vy32ufc"]
+
+[ext_resource type="Script" path="res://Scripts/MenuPausa.gd" id="1_crgih"]
+[ext_resource type="Texture2D" uid="uid://bok801c5vcwh7" path="res://Iconos/icono_pausa.png" id="2_h3ury"]
+[ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="3_2i3eu"]
+[ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="3_mqmfg"]
+[ext_resource type="AudioStream" uid="uid://dxcqw0li8usiu" path="res://Audio/audio_oceano_afuera.mp3" id="5_bwl2k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xbuy"]
+bg_color = Color(0.337255, 0.815686, 0.835294, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.776471, 0.854902, 0.858824, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_crgih")
+
+[node name="BotonPausa" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 40.0
+offset_right = -70.0
+offset_bottom = 190.0
+grow_horizontal = 0
+icon = ExtResource("2_h3ury")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xbuy")
+
+[node name="Titulo" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 60.0
+offset_right = 200.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_2i3eu")
+theme_override_font_sizes/font_size = 100
+text = "Pausa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonesPrincipales" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -50.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="BotonReiniciar" type="Button" parent="Panel/BotonesPrincipales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_2i3eu")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = ExtResource("3_mqmfg")
+theme_override_styles/hover = ExtResource("3_mqmfg")
+theme_override_styles/pressed = ExtResource("3_mqmfg")
+theme_override_styles/disabled = ExtResource("3_mqmfg")
+theme_override_styles/focus = ExtResource("3_mqmfg")
+text = "Reiniciar
+"
+icon_alignment = 1
+expand_icon = true
+
+[node name="BotonSalir" type="Button" parent="Panel/BotonesPrincipales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_2i3eu")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = ExtResource("3_mqmfg")
+theme_override_styles/hover = ExtResource("3_mqmfg")
+theme_override_styles/pressed = ExtResource("3_mqmfg")
+theme_override_styles/disabled = ExtResource("3_mqmfg")
+theme_override_styles/focus = ExtResource("3_mqmfg")
+text = "Salir al menú"
+expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bwl2k")
+autoplay = true
+
+[connection signal="pressed" from="BotonPausa" to="." method="_on_boton_pausa_pressed"]
+[connection signal="toggled" from="BotonPausa" to="." method="_on_boton_pausa_toggled"]
+[connection signal="pressed" from="Panel/BotonesPrincipales/BotonReiniciar" to="." method="_on_boton_reiniciar_pressed"]
+[connection signal="pressed" from="Panel/BotonesPrincipales/BotonSalir" to="." method="_on_boton_salir_pressed"]

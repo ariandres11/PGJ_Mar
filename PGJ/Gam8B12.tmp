@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://b001x1vy32ufc"]
+
+[ext_resource type="Script" path="res://MenuPausa.gd" id="1_j161h"]
+[ext_resource type="Texture2D" uid="uid://bok801c5vcwh7" path="res://icono_pausa.png" id="1_sgrsp"]
+[ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://ButtonStyleMainMenu.tres" id="3_48682"]
+[ext_resource type="Texture2D" uid="uid://b0anwynowlpqc" path="res://icono_esp.png" id="4_o51e6"]
+[ext_resource type="Texture2D" uid="uid://cp04aejp14vxs" path="res://icono_ing.png" id="5_q744m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xbuy"]
+bg_color = Color(0.337255, 0.815686, 0.835294, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.776471, 0.854902, 0.858824, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j161h")
+
+[node name="BotonPausa" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 40.0
+offset_right = -70.0
+offset_bottom = 190.0
+grow_horizontal = 0
+icon = ExtResource("1_sgrsp")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xbuy")
+
+[node name="BotonesPrincipales" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -50.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="BotonReiniciar" type="Button" parent="Panel/BotonesPrincipales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = ExtResource("3_48682")
+theme_override_styles/hover = ExtResource("3_48682")
+theme_override_styles/pressed = ExtResource("3_48682")
+theme_override_styles/disabled = ExtResource("3_48682")
+theme_override_styles/focus = ExtResource("3_48682")
+text = "Jugar
+"
+icon_alignment = 1
+expand_icon = true
+
+[node name="BotonSalir" type="Button" parent="Panel/BotonesPrincipales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = ExtResource("3_48682")
+theme_override_styles/hover = ExtResource("3_48682")
+theme_override_styles/pressed = ExtResource("3_48682")
+theme_override_styles/disabled = ExtResource("3_48682")
+theme_override_styles/focus = ExtResource("3_48682")
+text = "Salir"
+expand_icon = true
+
+[node name="Idiomas" type="HBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 40.0
+offset_bottom = 190.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="BotonEspañol" type="Button" parent="Panel/Idiomas"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("4_o51e6")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BotonIngles" type="Button" parent="Panel/Idiomas"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("5_q744m")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="BotonPausa" to="." method="_on_boton_pausa_pressed"]
+[connection signal="pressed" from="Panel/BotonesPrincipales/BotonSalir" to="." method="_on_boton_salir_pressed"]
