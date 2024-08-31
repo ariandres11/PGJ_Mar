@@ -8,7 +8,6 @@ func set_idioma_escena()-> void:
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_idioma_escena()
-	pass # Replace with function body.
 
 func _process(delta):
 	pass
@@ -25,4 +24,12 @@ func _on_boton_salir_pressed():
 
 func _on_boton_reiniciar_pressed():
 	get_tree().change_scene_to_file("res://Game.tscn")
-	pass # Replace with function body.
+
+
+func _on_boton_resta_pressed():
+	$ProgressBar.value = max($ProgressBar.value - 0.01, $ProgressBar.min_value)
+	print("Restando")
+
+func _on_boton_suma_pressed():
+	$ProgressBar.value = min($ProgressBar.value + 0.01, $ProgressBar.max_value)
+	print("Sumando")
