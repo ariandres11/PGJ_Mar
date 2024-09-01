@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=3 uid="uid://bar6v4a3jbn5s"]
+
+[ext_resource type="Script" path="res://Perdiste.gd" id="1_mydpk"]
+[ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="2_a1yra"]
+[ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="3_a51eo"]
+[ext_resource type="Texture2D" uid="uid://byjad1xllxqga" path="res://Iconos/ej_icono_piojoagil.png" id="4_61w6c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgqsk"]
+bg_color = Color(0.815686, 0.364706, 0.258824, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mydpk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -360.0
+offset_right = 600.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kgqsk")
+
+[node name="botones" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+offset_left = 281.0
+offset_top = 750.0
+offset_right = 919.0
+offset_bottom = 850.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+alignment = 1
+
+[node name="BotonVolver2" type="Button" parent="Panel/botones"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_a1yra")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_a51eo")
+theme_override_styles/hover = ExtResource("3_a51eo")
+theme_override_styles/pressed = ExtResource("3_a51eo")
+theme_override_styles/disabled = ExtResource("3_a51eo")
+theme_override_styles/focus = ExtResource("3_a51eo")
+text = "Volver al menú
+"
+
+[node name="VolverJugar" type="Button" parent="Panel/botones"]
+layout_mode = 2
+text = "VolverAJugar"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -400.0
+offset_right = 500.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="PerdisteTitulo" type="Label" parent="Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_a1yra")
+theme_override_font_sizes/font_size = 100
+text = "¡No llegaste a la meta!"
+vertical_alignment = 1
+
+[node name="PerdisteParrafo" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 1)
+theme_override_fonts/font = ExtResource("2_a1yra")
+theme_override_font_sizes/font_size = 50
+text = "Pusiste tus huevos, ahora 
+una nueva generación "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PerdisteParrafo2" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 1)
+theme_override_fonts/font = ExtResource("2_a1yra")
+theme_override_font_sizes/font_size = 50
+text = " de piojos 
+está lista para conquistar  el mar argentino. "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 1414.0
+offset_top = 576.0
+offset_right = 1714.0
+offset_bottom = 876.0
+rotation = 0.286234
+texture = ExtResource("4_61w6c")
+expand_mode = 1
+
+[connection signal="pressed" from="Panel/botones/BotonVolver2" to="." method="_on_boton_volver_pressed"]
+[connection signal="pressed" from="Panel/botones/VolverJugar" to="." method="_on_volver_jugar_pressed"]

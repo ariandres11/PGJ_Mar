@@ -1,5 +1,9 @@
 extends Control
 
+func _ready():
+	TranslationServer.set_locale(Globales.idioma)
+	set_idioma_escena()
+	
 func set_idioma_escena()-> void:
 	$BotonesPrincipales/BotonJugar.text = tr("BotonJugar")
 	$BotonesPrincipales/BotonCreditos.text = tr("BotonCreditos")

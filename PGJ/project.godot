@@ -29,6 +29,12 @@ window/stretch/aspect="ignore"
 
 movie_writer/movie_file="C:/Users/ariel/OneDrive/Escritorio/PGJ/VideosMuestra/muestra_5avi.avi"
 
+[importer_defaults]
+
+csv_translation={
+"delimiter": 1
+}
+
 [internationalization]
 
-locale/translations=PackedStringArray("res://Traslate/traslate.eng.translation", "res://Traslate/traslate.esp.translation")
+locale/translations=PackedStringArray("res://traslate.eng.translation", "res://traslate.esp.translation")

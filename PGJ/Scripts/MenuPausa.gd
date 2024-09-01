@@ -5,6 +5,15 @@ func set_idioma_escena()-> void:
 	$Panel/BotonesPrincipales/BotonReiniciar.text = tr("BotonReiniciar")
 	$Panel/BotonesPrincipales/BotonSalir.text = tr("BotonSalir")
 	$Panel/Titulo.text = tr("Pausa")
+	$ZonaSeguraTexto.text = tr("SeguroMoverte")
+	$Agarre.text = tr("Agarre")
+	#Efectos
+	$EfectoCayendo/Cayendo3.text = tr("Cayendo")
+	$EfectoCayendo/Cayendo2.text = tr("Cayendo")
+	$EfectoCayendo/Cayendo.text = tr("Cayendo")
+	
+	$EfectoSumergiendo/Cayendo3.text = tr("Cayendo")
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_idioma_escena()
@@ -23,13 +32,13 @@ func _on_boton_salir_pressed():
 	get_tree().change_scene_to_file("res://Scenes/UIInicio.tscn")
 
 func _on_boton_reiniciar_pressed():
-	get_tree().change_scene_to_file("res://Game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+
+func _on_boton_perder_pressed():
+	get_tree().change_scene_to_file("res://Perdiste.tscn")
+	pass # Replace with function body.
 
 
-func _on_boton_resta_pressed():
-	$ProgressBar.value = max($ProgressBar.value - 0.01, $ProgressBar.min_value)
-	print("Restando")
-
-func _on_boton_suma_pressed():
-	$ProgressBar.value = min($ProgressBar.value + 0.01, $ProgressBar.max_value)
-	print("Sumando")
+func _on_boton_ganar_pressed():
+	get_tree().change_scene_to_file("res://Scenes/UIFin.tscn")
+	pass # Replace with function body.
