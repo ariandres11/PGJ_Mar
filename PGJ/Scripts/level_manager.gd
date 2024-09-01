@@ -48,5 +48,9 @@ func game_over():
 	
 func win(body: Node3D):
 	print("YOU WIN!")
+	Input.stop_joy_vibration(0)
+	call_deferred("win_scene") 
 	pass
 	
+func win_scene():
+	get_tree().change_scene_to_file("res://Scenes/UIFin.tscn")
