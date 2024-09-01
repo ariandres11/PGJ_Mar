@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bar6v4a3jbn5s"]
 
-[ext_resource type="Script" path="res://Perdiste.gd" id="1_mydpk"]
+[ext_resource type="Script" path="res://Scenes/Perdiste.gd" id="1_mydpk"]
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="2_a1yra"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="3_a51eo"]
 [ext_resource type="Texture2D" uid="uid://byjad1xllxqga" path="res://Iconos/ej_icono_piojoagil.png" id="4_61w6c"]

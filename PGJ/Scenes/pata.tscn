@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://pkbkwdwravr0"]
+
+[ext_resource type="Script" path="res://Scripts/pata.gd" id="1_5t7n1"]
+
+[node name="Pata" type="Marker3D"]
+script = ExtResource("1_5t7n1")
+
+[node name="Target" type="Marker3D" parent="."]
+
+[node name="Pinza" type="Marker3D" parent="."]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Pinza"]
+radius = 0.1
+
+[node name="Hombro" type="Marker3D" parent="."]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Hombro"]
+radius = 0.05

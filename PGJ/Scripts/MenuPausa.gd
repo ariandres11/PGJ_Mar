@@ -35,7 +35,7 @@ func _on_boton_reiniciar_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 
 func _on_boton_perder_pressed():
-	get_tree().change_scene_to_file("res://Perdiste.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Perdiste.tscn")
 	pass # Replace with function body.
 
 
