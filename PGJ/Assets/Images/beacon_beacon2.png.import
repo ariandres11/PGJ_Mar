@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcv68krko6ygx"
-path.s3tc="res://.godot/imported/beacon_beacon1.png-0be09712590f4475d3728117618bc8f3.s3tc.ctex"
+uid="uid://c6i20ty1xcout"
+path.s3tc="res://.godot/imported/beacon_beacon2.png-906d8a4ccfdde8d414c54cbf7823729b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/beacon_beacon1.png"
-dest_files=["res://.godot/imported/beacon_beacon1.png-0be09712590f4475d3728117618bc8f3.s3tc.ctex"]
+source_file="res://Assets/Images/beacon_beacon2.png"
+dest_files=["res://.godot/imported/beacon_beacon2.png-906d8a4ccfdde8d414c54cbf7823729b.s3tc.ctex"]
 
 [params]
 

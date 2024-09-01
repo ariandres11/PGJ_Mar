@@ -22,9 +22,12 @@ grow_vertical = 2
 script = ExtResource("1_wbcn5")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 stream = ExtResource("2_65oxk")
 autoplay = true
 expand = true
@@ -86,14 +89,17 @@ text = "Salir"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -221.0
-offset_top = 144.0
-offset_right = 279.0
-offset_bottom = 381.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -238.5
+offset_right = 250.0
+offset_bottom = -1.5
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.2, 0.588235, 0.603922, 1)
 theme_override_colors/font_shadow_color = Color(0.0470588, 0.235294, 0.301961, 1)
 theme_override_fonts/font = ExtResource("3_ntt3m")
@@ -104,14 +110,16 @@ vertical_alignment = 1
 
 [node name="Contactos" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 50.0
-offset_top = 75.0
-offset_right = 250.0
-offset_bottom = 525.0
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -242.0
+offset_right = 221.0
+offset_bottom = 208.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Contactos"]
 custom_minimum_size = Vector2(25, 25)
@@ -162,12 +170,14 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -420.0
+offset_left = -220.0
 offset_top = 20.0
-offset_right = -20.0
+offset_right = 180.0
 offset_bottom = 170.0
 grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
 alignment = 1
+metadata/_edit_group_ = true
 
 [node name="BotonEspañol" type="Button" parent="Idiomas"]
 custom_minimum_size = Vector2(50, 50)

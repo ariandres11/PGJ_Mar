@@ -28,7 +28,7 @@ func _on_boton_ingles_pressed():
 	pass # Replace with function body.
 
 func _on_boton_jugar_pressed():
-	var packed_scene = preload("res://Scenes/Game.tscn")
+	var packed_scene = preload("res://Scenes/main.tscn")
 	get_tree().change_scene_to_packed(packed_scene)
 	
 func _on_boton_salir_pressed():
