@@ -42,3 +42,5 @@ func _on_boton_perder_pressed():
 func _on_boton_ganar_pressed():
 	get_tree().change_scene_to_file("res://Scenes/UIFin.tscn")
 	pass # Replace with function body.
+
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbv5rsqa70bmf"]
+[gd_scene load_steps=13 format=3 uid="uid://dbv5rsqa70bmf"]
 
 [ext_resource type="Environment" uid="uid://namt0lkeifsl" path="res://Scenes/main-environment.tres" id="1_x8oc8"]
 [ext_resource type="PackedScene" uid="uid://pkbkwdwravr0" path="res://Scenes/pata.tscn" id="2_td380"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c6i20ty1xcout" path="res://Assets/Images/beacon_beacon2.png" id="6_ti5m7"]
 [ext_resource type="Texture2D" uid="uid://c87mfa717kvga" path="res://Assets/Images/beacon_beacon3.png" id="7_hqd2i"]
 [ext_resource type="Script" path="res://Scripts/piojo.gd" id="7_iq5of"]
+[ext_resource type="PackedScene" uid="uid://b001x1vy32ufc" path="res://Scenes/Game.tscn" id="9_36bq8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u7cip"]
 radius = 0.24545
@@ -162,6 +163,8 @@ frame_progress = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Finish"]
 shape = SubResource("SphereShape3D_nqmoh")
+
+[node name="Control" parent="." instance=ExtResource("9_36bq8")]
 
 [connection signal="timeout" from="LevelManager/SumergirseTimer" to="LevelManager" method="sumergirse"]
 [connection signal="timeout" from="LevelManager/EmergerTimer" to="LevelManager" method="emerger"]

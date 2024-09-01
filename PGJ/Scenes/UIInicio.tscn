@@ -23,9 +23,15 @@ script = ExtResource("1_wbcn5")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -745.0
+offset_top = -460.0
+offset_right = 745.0
+offset_bottom = 460.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("2_65oxk")
@@ -54,11 +60,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_ntt3m")
 theme_override_font_sizes/font_size = 56
-theme_override_styles/focus = ExtResource("4_tfcre")
-theme_override_styles/disabled = ExtResource("4_tfcre")
+theme_override_styles/normal = ExtResource("4_tfcre")
 theme_override_styles/hover = ExtResource("4_tfcre")
 theme_override_styles/pressed = ExtResource("4_tfcre")
-theme_override_styles/normal = ExtResource("4_tfcre")
+theme_override_styles/disabled = ExtResource("4_tfcre")
+theme_override_styles/focus = ExtResource("4_tfcre")
 text = "Jugar
 "
 
@@ -67,11 +73,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_ntt3m")
 theme_override_font_sizes/font_size = 56
-theme_override_styles/focus = ExtResource("4_tfcre")
-theme_override_styles/disabled = ExtResource("4_tfcre")
+theme_override_styles/normal = ExtResource("4_tfcre")
 theme_override_styles/hover = ExtResource("4_tfcre")
 theme_override_styles/pressed = ExtResource("4_tfcre")
-theme_override_styles/normal = ExtResource("4_tfcre")
+theme_override_styles/disabled = ExtResource("4_tfcre")
+theme_override_styles/focus = ExtResource("4_tfcre")
 text = "Créditos
 "
 
@@ -80,11 +86,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_ntt3m")
 theme_override_font_sizes/font_size = 56
-theme_override_styles/focus = ExtResource("4_tfcre")
-theme_override_styles/disabled = ExtResource("4_tfcre")
+theme_override_styles/normal = ExtResource("4_tfcre")
 theme_override_styles/hover = ExtResource("4_tfcre")
 theme_override_styles/pressed = ExtResource("4_tfcre")
-theme_override_styles/normal = ExtResource("4_tfcre")
+theme_override_styles/disabled = ExtResource("4_tfcre")
+theme_override_styles/focus = ExtResource("4_tfcre")
 text = "Salir"
 
 [node name="Label" type="Label" parent="."]
@@ -150,16 +156,17 @@ offset_right = -52.0
 offset_bottom = 110.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 24
-theme_override_styles/focus = ExtResource("4_tfcre")
-theme_override_styles/disabled = ExtResource("4_tfcre")
-theme_override_styles/hover = ExtResource("4_tfcre")
-theme_override_styles/pressed = ExtResource("4_tfcre")
 theme_override_styles/normal = ExtResource("4_tfcre")
+theme_override_styles/pressed = ExtResource("4_tfcre")
+theme_override_styles/hover = ExtResource("4_tfcre")
+theme_override_styles/disabled = ExtResource("4_tfcre")
+theme_override_styles/focus = ExtResource("4_tfcre")
 text = "Idioma"
 icon = SubResource("ImageTexture_e5q1v")
 flat = false
 item_count = 2
 popup/item_0/text = "English"
+popup/item_0/id = 0
 popup/item_1/text = "Español"
 popup/item_1/checked = true
 popup/item_1/id = 1

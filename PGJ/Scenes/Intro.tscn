@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cus3lmp4hk4x1"]
+
+[ext_resource type="Script" path="res://Intro.gd" id="1_7o14h"]
+[ext_resource type="VideoStream" path="res://Animaciones/intro__presionar_play.ogv" id="2_2pipy"]
+[ext_resource type="AudioStream" uid="uid://dxcqw0li8usiu" path="res://Audio/audio_oceano_afuera.mp3" id="3_i7eno"]
+[ext_resource type="AudioStream" uid="uid://t0hgifsewg7h" path="res://Audio/audio_oceano_4min_mp3.mp3" id="4_ubwvw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_7o14h")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -745.0
+offset_top = -460.0
+offset_right = 745.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_2pipy")
+autoplay = true
+expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i7eno")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ubwvw")
+
+[node name="TimerTransicion1" type="Timer" parent="."]
+wait_time = 3.267
+autostart = true
+
+[node name="TimerPasarEscena" type="Timer" parent="."]
+wait_time = 25.266
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="timeout" from="TimerTransicion1" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerPasarEscena" to="." method="_on_timer_pasar_escena_timeout"]
