@@ -13,7 +13,7 @@ config_version=5
 config/name="PGJ_MAR"
 run/main_scene="res://Scenes/UIInicio.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Iconos/logo_juego.png"
 
 [autoload]
 

@@ -61,101 +61,15 @@ theme_override_font_sizes/font_size = 100
 text = "Fin del juego"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 100
-alignment = 1
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.172549, 0.909804, 0.917647, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_dx8ot")
 theme_override_font_sizes/font_size = 50
-text = "Puntuación"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("3_dx8ot")
-theme_override_font_sizes/font_size = 50
-text = "10
-"
-vertical_alignment = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 100
-alignment = 1
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.172549, 0.909804, 0.917647, 1)
-theme_override_fonts/font = ExtResource("3_dx8ot")
-theme_override_font_sizes/font_size = 50
-text = "Programador"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("3_dx8ot")
-theme_override_font_sizes/font_size = 50
-text = "Rodrigo Rene Cura"
-vertical_alignment = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 100
-alignment = 1
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.172549, 0.909804, 0.917647, 1)
-theme_override_fonts/font = ExtResource("3_dx8ot")
-theme_override_font_sizes/font_size = 50
-text = "Modelado 3D"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("3_dx8ot")
-theme_override_font_sizes/font_size = 50
-text = "Adrián San Martin"
-vertical_alignment = 1
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 100
-alignment = 1
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.172549, 0.909804, 0.917647, 1)
-theme_override_fonts/font = ExtResource("3_dx8ot")
-theme_override_font_sizes/font_size = 50
-text = "Topologia"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("3_dx8ot")
-theme_override_font_sizes/font_size = 50
-text = "Joaquin Cual"
+text = "Misión cumplida! Lograste mantenerte
+ sujetado durante todo el trayecto"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BotonVolver" type="Button" parent="."]
