@@ -8,7 +8,7 @@ func set_idioma_escena()-> void:
 	$BotonesPrincipales/BotonJugar.text = tr("BotonJugar")
 	$BotonesPrincipales/BotonCreditos.text = tr("BotonCreditos")
 	$BotonesPrincipales/BotonSalir.text = tr("BotonSalir")
-	
+	$BotonControles.text = tr("Controles")
 	
 #Español
 func _on_boton_español_pressed():
@@ -37,5 +37,11 @@ func _on_boton_salir_pressed():
 
 func _on_boton_creditos_pressed():
 	var packed_scene = preload("res://Scenes/Creditos.tscn")
+	get_tree().change_scene_to_packed(packed_scene)
+	pass # Replace with function body.
+
+
+func _on_boton_controles_pressed():
+	var packed_scene = load("res://Scenes/Controles.tscn")
 	get_tree().change_scene_to_packed(packed_scene)
 	pass # Replace with function body.

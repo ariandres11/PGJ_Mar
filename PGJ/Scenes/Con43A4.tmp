@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceu7rf7fee4mt"]
+
+[ext_resource type="Script" path="res://Controles.gd" id="1_hob0c"]
+[ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="2_b58yo"]
+[ext_resource type="Texture2D" uid="uid://cvgyisreaa74d" path="res://Iconos/teclado1.png" id="3_3vxbg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hob0c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -250.0
+offset_right = 500.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="ControlesTitulo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_b58yo")
+theme_override_font_sizes/font_size = 100
+text = "Controles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("3_3vxbg")
+expand_mode = 1
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 4.02
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.145
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 25.268
+
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
