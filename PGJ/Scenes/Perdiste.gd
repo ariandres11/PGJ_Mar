@@ -31,7 +31,7 @@ func _on_boton_volver_pressed():
 
 
 func _on_volver_jugar_pressed():
-	var packed = load("res://Scenes/Game.tscn")
+	var packed = load("res://Scenes/main.tscn")
 	#get_tree().change_scene_to_file("res://Scenes/UIInicio.tscn")
 	get_tree().change_scene_to_packed(packed)
 	pass # Replace with function body.

@@ -28,3 +28,9 @@ func _on_audio_stream_player_finished():
 
 func _on_video_stream_player_finished():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
+
+
+func _on_saltar_intro_pressed():
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	pass # Replace with function body.

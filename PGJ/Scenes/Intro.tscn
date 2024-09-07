@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cus3lmp4hk4x1"]
+[gd_scene load_steps=7 format=3 uid="uid://cus3lmp4hk4x1"]
 
 [ext_resource type="Script" path="res://Intro.gd" id="1_7o14h"]
 [ext_resource type="VideoStream" path="res://Animaciones/intro__presionar_play.ogv" id="2_2pipy"]
 [ext_resource type="AudioStream" uid="uid://dxcqw0li8usiu" path="res://Audio/audio_oceano_afuera.mp3" id="3_i7eno"]
 [ext_resource type="AudioStream" uid="uid://t0hgifsewg7h" path="res://Audio/audio_oceano_4min_mp3.mp3" id="4_ubwvw"]
+[ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="5_3bitk"]
+[ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="6_w03us"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -46,7 +48,31 @@ autostart = true
 [node name="TimerPasarEscena" type="Timer" parent="."]
 wait_time = 25.266
 
+[node name="SaltarIntro" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -170.0
+offset_right = -30.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_3bitk")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_w03us")
+theme_override_styles/hover = ExtResource("6_w03us")
+theme_override_styles/pressed = ExtResource("6_w03us")
+theme_override_styles/disabled = ExtResource("6_w03us")
+theme_override_styles/focus = ExtResource("6_w03us")
+text = "Omitir intro
+"
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="timeout" from="TimerTransicion1" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerPasarEscena" to="." method="_on_timer_pasar_escena_timeout"]
+[connection signal="pressed" from="SaltarIntro" to="." method="_on_saltar_intro_pressed"]

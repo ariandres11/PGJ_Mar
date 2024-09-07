@@ -31,9 +31,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -326.5
-offset_top = 360.0
+offset_top = 220.0
 offset_right = 326.5
-offset_bottom = 460.0
+offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -74,10 +74,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -700.0
-offset_top = -310.0
-offset_right = 700.0
-offset_bottom = 310.0
+offset_left = -600.0
+offset_top = -300.0
+offset_right = 600.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kgqsk")
@@ -95,14 +95,14 @@ offset_right = 500.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 100
+theme_override_constants/separation = 70
 alignment = 1
 
 [node name="PerdisteTitulo" type="Label" parent="Panel/VBoxContainer/HBoxContainer5"]
@@ -119,7 +119,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 1)
 theme_override_fonts/font = ExtResource("2_a1yra")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "Pusiste tus huevos, ahora 
 una nueva generación "
 horizontal_alignment = 1
@@ -130,7 +130,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 1)
 theme_override_fonts/font = ExtResource("2_a1yra")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = " de piojos 
 está lista para conquistar  el mar argentino. "
 horizontal_alignment = 1

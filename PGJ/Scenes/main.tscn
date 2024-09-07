@@ -150,6 +150,10 @@ autostart = true
 wait_time = 3.0
 one_shot = true
 
+[node name="PoderPerderTimer" type="Timer" parent="LevelManager"]
+wait_time = 5.0
+autostart = true
+
 [node name="Finish" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85025, 2.49997, 0)
 metadata/_edit_group_ = true
@@ -169,6 +173,7 @@ shape = SubResource("SphereShape3D_nqmoh")
 
 [connection signal="timeout" from="LevelManager/SumergirseTimer" to="LevelManager" method="sumergirse"]
 [connection signal="timeout" from="LevelManager/EmergerTimer" to="LevelManager" method="emerger"]
+[connection signal="timeout" from="LevelManager/PoderPerderTimer" to="LevelManager" method="_on_poder_perder_timer_timeout"]
 [connection signal="area_entered" from="Finish" to="LevelManager" method="win"]
 [connection signal="body_entered" from="Finish" to="LevelManager" method="win"]
 
