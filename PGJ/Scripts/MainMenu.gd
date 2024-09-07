@@ -40,7 +40,6 @@ func _on_boton_creditos_pressed():
 	get_tree().change_scene_to_packed(packed_scene)
 	pass # Replace with function body.
 
-
 func _on_boton_controles_pressed():
 	var packed_scene = load("res://Scenes/Controles.tscn")
 	get_tree().change_scene_to_packed(packed_scene)

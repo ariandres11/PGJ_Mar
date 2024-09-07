@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckm2vy8ql2cep"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_wbcn5"]
-[ext_resource type="VideoStream" path="res://Animaciones/enviroment1.ogv" id="2_65oxk"]
+[ext_resource type="VideoStream" path="res://Animaciones/intro.ogv" id="2_arc6o"]
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="3_ntt3m"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="4_tfcre"]
 [ext_resource type="Texture2D" uid="uid://bxcye6jj4wx87" path="res://Iconos/icono_gdv.png" id="5_50k6m"]
@@ -34,7 +34,7 @@ offset_right = 745.0
 offset_bottom = 460.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_65oxk")
+stream = ExtResource("2_arc6o")
 autoplay = true
 expand = true
 loop = true

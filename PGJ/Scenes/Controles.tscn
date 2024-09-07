@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceu7rf7fee4mt"]
+[gd_scene load_steps=7 format=3 uid="uid://ceu7rf7fee4mt"]
 
 [ext_resource type="Script" path="res://Controles.gd" id="1_hob0c"]
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="2_b58yo"]
-[ext_resource type="Texture2D" uid="uid://cvgyisreaa74d" path="res://Iconos/teclado1.png" id="3_3vxbg"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="4_a5wud"]
+[ext_resource type="Texture2D" uid="uid://bk6ec2buo4oka" path="res://Iconos/teclado_español.png" id="5_bbq6p"]
+[ext_resource type="VideoStream" path="res://Animaciones/intro.ogv" id="5_kax6a"]
+[ext_resource type="AudioStream" uid="uid://t0hgifsewg7h" path="res://Audio/audio_oceano_4min_mp3.mp3" id="6_x65bq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,6 +16,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hob0c")
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(1490, 920)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -745.0
+offset_top = -460.0
+offset_right = 745.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("5_kax6a")
+autoplay = true
+expand = true
+loop = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x65bq")
+autoplay = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -22,9 +47,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -500.0
-offset_top = -250.0
+offset_top = -320.0
 offset_right = 500.0
-offset_bottom = 250.0
+offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -40,17 +65,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-custom_minimum_size = Vector2(300, 300)
+custom_minimum_size = Vector2(350, 450)
 layout_mode = 2
-texture = ExtResource("3_3vxbg")
+texture = ExtResource("5_bbq6p")
 expand_mode = 1
-
-[node name="Timer1" type="Timer" parent="."]
-wait_time = 4.02
-autostart = true
-
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 3.199
 
 [node name="VolverMenu" type="Button" parent="."]
 layout_mode = 1
@@ -74,6 +92,4 @@ theme_override_styles/disabled = ExtResource("4_a5wud")
 theme_override_styles/focus = ExtResource("4_a5wud")
 text = "Volver al menu"
 
-[connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="pressed" from="VolverMenu" to="." method="_on_volver_menu_pressed"]
