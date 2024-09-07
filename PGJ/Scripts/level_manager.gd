@@ -1,19 +1,37 @@
 extends Node
 
 @export var piojo: Piojo
+@export var control:Control
 
 var corriente: Vector3 = Vector3.ZERO
+var agarre = 0
+var progress_bar = null
+var tiempo = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	progress_bar = control.get_node("ProgressBar") as ProgressBar
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	tiempo += delta
+	if tiempo >= 2.0:
+		tiempo = 0.0
+		if piojo.grab_power > 0:
+			agarre += pow(piojo.grab_power, 2) * 0.4
+		else:
+			agarre -= 7  # Disminuye el agarre si no estás agarrado
+		agarre = clamp(agarre, 0, 100)  
+		progress_bar.update_agarre(agarre)
+	
+	
 	# Condiciones de perder
 	# Soltaste las 4 patitas
+	if(progress_bar.value == 0):
+		game_over()
 	if piojo.grab_power == 0:
 		game_over()
 	# Se consumió la barra de stamina

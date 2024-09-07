@@ -136,9 +136,10 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Piojo/Hitbox"]
 shape = SubResource("SphereShape3D_u7cip")
 
-[node name="LevelManager" type="Node" parent="." node_paths=PackedStringArray("piojo")]
+[node name="LevelManager" type="Node" parent="." node_paths=PackedStringArray("piojo", "control")]
 script = ExtResource("4_2b0sq")
 piojo = NodePath("../Piojo")
+control = NodePath("../Control")
 
 [node name="SumergirseTimer" type="Timer" parent="LevelManager"]
 wait_time = 10.0
