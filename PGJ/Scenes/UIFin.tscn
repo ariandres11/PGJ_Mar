@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbwoqtp30v4fx"]
+[gd_scene load_steps=7 format=3 uid="uid://cbwoqtp30v4fx"]
 
 [ext_resource type="Script" path="res://Scenes/Ganaste.gd" id="1_7nsjy"]
+[ext_resource type="VideoStream" path="res://Animaciones/intro.ogv" id="2_hhdw4"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="2_tcbe6"]
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="3_dx8ot"]
 [ext_resource type="Texture2D" uid="uid://byjad1xllxqga" path="res://Iconos/ej_icono_piojoagil.png" id="4_2462c"]
@@ -22,6 +23,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7nsjy")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -745.0
+offset_top = -460.0
+offset_right = 745.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_hhdw4")
+autoplay = true
+expand = true
+loop = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

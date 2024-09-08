@@ -8,26 +8,63 @@ var agarre = 0
 var progress_bar = null
 var tiempo = 0
 var podes_perder = false
+var style_box_verde = StyleBoxFlat.new()
+var style_box_rojo = StyleBoxFlat.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	progress_bar = control.get_node("ProgressBar") as ProgressBar
 	$PoderPerderTimer.start()
-	pass # Replace with function body.
+	
+		
+	#Style verde
+	style_box_verde.bg_color = Color(0.2, 1, 0.2)  # Verde suave
+	style_box_verde.corner_radius_top_left = 30
+	style_box_verde.corner_radius_top_right = 30
+	style_box_verde.corner_radius_bottom_left = 30
+	style_box_verde.corner_radius_bottom_right = 30
+	style_box_verde.border_color = Color(0.2, 0.588, 0.604)
+	
+	style_box_verde.border_width_left = 10
+	style_box_verde.border_width_bottom = 10
+	style_box_verde.border_width_top = 10
+	style_box_verde.border_width_right = 10
+	
+	#Style rojo
+	style_box_rojo.bg_color = Color(1, 0.2, 0.2)  # Rojo suave
+	style_box_rojo.corner_radius_top_left = 30
+	style_box_rojo.corner_radius_top_right = 30
+	style_box_rojo.corner_radius_bottom_left = 30
+	style_box_rojo.corner_radius_bottom_right = 30
+	style_box_rojo.border_color = Color(0.2, 0.588, 0.604)
+	
+	style_box_rojo.border_width_left = 10
+	style_box_rojo.border_width_bottom = 10
+	style_box_rojo.border_width_top = 10
+	style_box_rojo.border_width_right = 10
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	
+	progress_bar.modulate = Color(1,1,1)
 	tiempo += delta
-	if tiempo >= 2.0:
+	if tiempo >= 1.0:
 		tiempo = 0.0
 		if piojo.grab_power > 0:
-			agarre += pow(piojo.grab_power, 2) * 0.4
+			agarre += pow(piojo.grab_power, 2) * 0.6
 		else:
-			agarre -= pow(4 - piojo.grab_power, 2) * 0.4 # Disminuye el agarre si no estás agarrado
+			agarre -= pow(4 + piojo.grab_power, 2) * 1 # Disminuye el agarre si no estás agarrado
 		agarre = clamp(agarre, 0, 100)  
 		progress_bar.update_agarre(agarre)
+	if(progress_bar.value >= 70):
+		progress_bar.add_theme_stylebox_override("fill", style_box_verde)
+		#progress_bar.modulate = Color(0,1,0)
+	else:
+		progress_bar.add_theme_stylebox_override("fill", style_box_rojo)
+			
+
 	
 	# Condiciones de perder
 	# Soltaste las 4 patitas

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bar6v4a3jbn5s"]
+[gd_scene load_steps=7 format=3 uid="uid://bar6v4a3jbn5s"]
 
 [ext_resource type="Script" path="res://Scenes/Perdiste.gd" id="1_mydpk"]
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="2_a1yra"]
+[ext_resource type="VideoStream" path="res://Animaciones/intro.ogv" id="2_gn1y1"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="3_a51eo"]
 [ext_resource type="Texture2D" uid="uid://byjad1xllxqga" path="res://Iconos/ej_icono_piojoagil.png" id="4_61w6c"]
 
@@ -22,6 +23,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mydpk")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -745.0
+offset_top = -460.0
+offset_right = 745.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_gn1y1")
+autoplay = true
+expand = true
+loop = true
 
 [node name="botones" type="HBoxContainer" parent="."]
 layout_mode = 1
