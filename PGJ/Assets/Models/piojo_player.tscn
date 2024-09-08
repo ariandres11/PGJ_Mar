@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://us4s2t8xecca"]
+
+[ext_resource type="PackedScene" uid="uid://bxahp5nfehhyg" path="res://Assets/Models/piojo_player.glb" id="1_y5k1m"]
+[ext_resource type="Script" path="res://Scripts/piojo_player.gd" id="2_jllpu"]
+
+[node name="piojo_player" instance=ExtResource("1_y5k1m")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("2_jllpu")
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.817963)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(1.17292e-16, 2.0051e-23, -4.01473e-24, 1)
+bones/6/rotation = Quaternion(0.00759806, 0.0937812, 0.298502, 0.94976)
+bones/7/rotation = Quaternion(0.0123483, -0.0442795, -0.045755, 0.997894)
+bones/9/rotation = Quaternion(0.20031, -0.0215264, -0.206554, 0.95747)
+bones/10/rotation = Quaternion(-0.276059, -0.0563795, -0.0106154, 0.959427)
+bones/13/rotation = Quaternion(-0.144749, 0.0560674, 0.213964, 0.964429)
+bones/14/rotation = Quaternion(0.302615, 0.0613525, 0.137969, 0.941076)
+bones/15/rotation = Quaternion(0.193012, 0.138938, -0.310598, 0.92031)
+bones/16/rotation = Quaternion(0.630075, 0.084999, -0.0109514, 0.771791)
+bones/17/rotation = Quaternion(-2.43476e-08, 1.44347e-10, 0.707107, 0.707107)
+bones/18/rotation = Quaternion(0.199116, -0.0291829, -0.142046, 0.969187)
+bones/19/rotation = Quaternion(-0.144749, -0.0560672, -0.213964, 0.964429)
+bones/20/rotation = Quaternion(0.315681, -0.0966973, -0.206732, 0.921009)
+bones/21/rotation = Quaternion(0.226766, -0.143568, 0.338117, 0.902021)
+bones/22/rotation = Quaternion(0.604833, -0.0825835, -0.00905017, 0.792007)
+bones/28/rotation = Quaternion(-0.176393, -0.751613, 0.155566, 0.616249)
+bones/34/rotation = Quaternion(-0.484428, 0.669201, -0.0932599, 0.5557)
+bones/39/rotation = Quaternion(0.306592, -0.239055, 0.134657, 0.911439)
+bones/46/rotation = Quaternion(-0.0105993, 0.311646, -0.185551, 0.931845)
+
+[node name="PataDF" type="SkeletonIK3D" parent="Armature/Skeleton3D" index="1"]
+root_bone = &"hueso2.pata intermedia der"
+tip_bone = &"hueso4.pata intermedia der"
+target_node = NodePath("../../../TargetDF")
+
+[node name="PataDB" type="SkeletonIK3D" parent="Armature/Skeleton3D" index="2"]
+root_bone = &"hueso2.pata inferior der"
+tip_bone = &"hueso4.pata inferior der"
+target_node = NodePath("../../../TargetDB")
+
+[node name="PataIF" type="SkeletonIK3D" parent="Armature/Skeleton3D" index="3"]
+root_bone = &"hueso2.pata intermedia izq"
+tip_bone = &"hueso4.pata intermedia izq"
+target_node = NodePath("../../../TargetIF")
+
+[node name="PataIB" type="SkeletonIK3D" parent="Armature/Skeleton3D" index="4"]
+root_bone = &"hueso2.pata inferior izq"
+tip_bone = &"hueso3.pata inferior izq.001"
+target_node = NodePath("../../../TargetIB")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "idle"
+
+[node name="TargetDF" type="Marker3D" parent="." index="2"]
+transform = Transform3D(0.25, 0.433012, -0.866025, -0.866025, 0.5, 0, 0.433013, 0.749999, 0.5, 1.71606, 1.88897, 0.0193706)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="TargetDF" index="0"]
+radius = 0.1
+
+[node name="TargetDB" type="Marker3D" parent="." index="3"]
+transform = Transform3D(-0.333922, 0.857386, -0.391643, -0.93933, -0.268101, 0.213962, 0.0784481, 0.439329, 0.894893, 2.50587, 0.934926, -0.0209408)
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="TargetDB" index="0"]
+transform = Transform3D(0.763973, -0.555421, 0.328409, 0.636765, 0.566706, -0.522854, 0.104293, 0.608565, 0.78662, 0, 0, 0)
+radius = 0.1
+
+[node name="TargetIF" type="Marker3D" parent="." index="4"]
+transform = Transform3D(0.624773, -0.762957, 0.165991, 0.777921, 0.626493, -0.0484178, -0.0670512, 0.159378, 0.984937, -2.29007, 1.78694, 0.019)
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="TargetIF" index="0"]
+transform = Transform3D(0.763973, -0.555421, 0.328409, 0.636765, 0.566706, -0.522854, 0.104293, 0.608565, 0.78662, 0, 0, 0)
+radius = 0.1
+
+[node name="TargetIB" type="Marker3D" parent="." index="5"]
+transform = Transform3D(-0.269842, -0.710218, 0.650211, 0.96264, -0.18316, 0.199438, -0.0225514, 0.679736, 0.733109, -2.71139, 1.30333, 0.019)
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="TargetIB" index="0"]
+transform = Transform3D(0.763973, -0.555421, 0.328409, 0.636765, 0.566706, -0.522854, 0.104293, 0.608565, 0.78662, 0, 0, 0)
+radius = 0.1

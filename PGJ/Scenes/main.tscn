@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbv5rsqa70bmf"]
+[gd_scene load_steps=14 format=3 uid="uid://dbv5rsqa70bmf"]
 
 [ext_resource type="Environment" uid="uid://namt0lkeifsl" path="res://Scenes/main-environment.tres" id="1_x8oc8"]
 [ext_resource type="PackedScene" uid="uid://pkbkwdwravr0" path="res://Scenes/pata.tscn" id="2_td380"]
-[ext_resource type="PackedScene" uid="uid://dfctwx7eebtae" path="res://Assets/Models/piojo_body.gltf" id="3_cj8yp"]
 [ext_resource type="Script" path="res://Scripts/level_manager.gd" id="4_2b0sq"]
+[ext_resource type="PackedScene" uid="uid://us4s2t8xecca" path="res://Assets/Models/piojo_player.tscn" id="4_a3q4e"]
+[ext_resource type="Script" path="res://Scripts/pata_controller.gd" id="5_ehnav"]
 [ext_resource type="Texture2D" uid="uid://bcv68krko6ygx" path="res://Assets/Images/beacon_beacon1.png" id="5_u481k"]
 [ext_resource type="Texture2D" uid="uid://c6i20ty1xcout" path="res://Assets/Images/beacon_beacon2.png" id="6_ti5m7"]
 [ext_resource type="Texture2D" uid="uid://c87mfa717kvga" path="res://Assets/Images/beacon_beacon3.png" id="7_hqd2i"]
@@ -59,77 +60,45 @@ script = ExtResource("7_iq5of")
 [node name="Modelo" type="Node3D" parent="Piojo/Cuerpo"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.255, -0.2)
 
-[node name="piojo_body" parent="Piojo/Cuerpo/Modelo" instance=ExtResource("3_cj8yp")]
-transform = Transform3D(0.334, 0, 0, 0, 0.334, 0, 0, 0, 0.334, 0, -0.133579, 0)
-
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="Piojo/Cuerpo/Modelo"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.25, 0, 0.137, 0)
-visible = false
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Piojo/Cuerpo/Modelo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, -0.363, 0)
-visible = false
+[node name="piojo_player" parent="Piojo/Cuerpo/Modelo" instance=ExtResource("4_a3q4e")]
+transform = Transform3D(0.334, 0, 0, 0, 0.334, 0, 0, 0, 0.334, 0, -0.143535, 0)
 
 [node name="Patas" type="Marker3D" parent="Piojo"]
+visible = false
 
-[node name="PataDF" parent="Piojo/Patas" instance=ExtResource("2_td380")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.114851, 0)
+[node name="DF" parent="Piojo/Patas" instance=ExtResource("2_td380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524191, 0.0225172, -0.431898)
+script = ExtResource("5_ehnav")
 move_input = "move_d_"
 grab_input = "grab_df"
+max_length = 3.0
 
-[node name="piojo_pinzaD3" parent="Piojo/Patas/PataDF/Pinza" index="1"]
-visible = false
+[node name="Hombro" parent="Piojo/Patas/DF" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="piojo_pinzaI2" parent="Piojo/Patas/PataDF/Pinza" index="2"]
-visible = false
-
-[node name="piojo_pinzaI3" parent="Piojo/Patas/PataDF/Pinza" index="3"]
-visible = false
-
-[node name="PataIF" parent="Piojo/Patas" instance=ExtResource("2_td380")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.114851, 0)
-move_input = "move_i_"
-grab_input = "grab_if"
-axis = Vector2(-1, 1)
-
-[node name="piojo_pinzaD2" parent="Piojo/Patas/PataIF/Pinza" index="0"]
-visible = false
-
-[node name="piojo_pinzaD3" parent="Piojo/Patas/PataIF/Pinza" index="1"]
-visible = false
-
-[node name="piojo_pinzaI3" parent="Piojo/Patas/PataIF/Pinza" index="3"]
-visible = false
-
-[node name="PataDB" parent="Piojo/Patas" instance=ExtResource("2_td380")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.115149, 0)
+[node name="DB" parent="Piojo/Patas" instance=ExtResource("2_td380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.674385, -0.183805, 0)
+script = ExtResource("5_ehnav")
 move_input = "move_d_"
 grab_input = "grab_db"
+max_length = 3.0
 axis = Vector2(1, -1)
 
-[node name="piojo_pinzaD2" parent="Piojo/Patas/PataDB/Pinza" index="0"]
-visible = false
+[node name="IF" parent="Piojo/Patas" instance=ExtResource("2_td380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50737, 0.0696495, 0)
+script = ExtResource("5_ehnav")
+move_input = "move_i_"
+grab_input = "grab_if"
+max_length = 3.0
+axis = Vector2(-1, 1)
 
-[node name="piojo_pinzaI2" parent="Piojo/Patas/PataDB/Pinza" index="2"]
-visible = false
-
-[node name="piojo_pinzaI3" parent="Piojo/Patas/PataDB/Pinza" index="3"]
-visible = false
-
-[node name="PataIB" parent="Piojo/Patas" instance=ExtResource("2_td380")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.115149, 0)
+[node name="IB" parent="Piojo/Patas" instance=ExtResource("2_td380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.580249, -0.265821, 0)
+script = ExtResource("5_ehnav")
 move_input = "move_i_"
 grab_input = "grab_ib"
+max_length = 3.0
 axis = Vector2(-1, -1)
-
-[node name="piojo_pinzaD2" parent="Piojo/Patas/PataIB/Pinza" index="0"]
-visible = false
-
-[node name="piojo_pinzaD3" parent="Piojo/Patas/PataIB/Pinza" index="1"]
-visible = false
-
-[node name="piojo_pinzaI2" parent="Piojo/Patas/PataIB/Pinza" index="2"]
-visible = false
 
 [node name="Hitbox" type="CharacterBody3D" parent="Piojo"]
 
@@ -177,7 +146,7 @@ shape = SubResource("SphereShape3D_nqmoh")
 [connection signal="area_entered" from="Finish" to="LevelManager" method="win"]
 [connection signal="body_entered" from="Finish" to="LevelManager" method="win"]
 
-[editable path="Piojo/Patas/PataDF"]
-[editable path="Piojo/Patas/PataIF"]
-[editable path="Piojo/Patas/PataDB"]
-[editable path="Piojo/Patas/PataIB"]
+[editable path="Piojo/Patas/DF"]
+[editable path="Piojo/Patas/DB"]
+[editable path="Piojo/Patas/IF"]
+[editable path="Piojo/Patas/IB"]

@@ -1,0 +1,152 @@
+[gd_scene load_steps=14 format=3 uid="uid://dbv5rsqa70bmf"]
+
+[ext_resource type="Environment" uid="uid://namt0lkeifsl" path="res://Scenes/main-environment.tres" id="1_x8oc8"]
+[ext_resource type="PackedScene" uid="uid://pkbkwdwravr0" path="res://Scenes/pata.tscn" id="2_td380"]
+[ext_resource type="Script" path="res://Scripts/level_manager.gd" id="4_2b0sq"]
+[ext_resource type="PackedScene" uid="uid://us4s2t8xecca" path="res://Assets/Models/piojo_player.tscn" id="4_a3q4e"]
+[ext_resource type="Script" path="res://Scripts/pata_controller.gd" id="5_ehnav"]
+[ext_resource type="Texture2D" uid="uid://bcv68krko6ygx" path="res://Assets/Images/beacon_beacon1.png" id="5_u481k"]
+[ext_resource type="Texture2D" uid="uid://c6i20ty1xcout" path="res://Assets/Images/beacon_beacon2.png" id="6_ti5m7"]
+[ext_resource type="Texture2D" uid="uid://c87mfa717kvga" path="res://Assets/Images/beacon_beacon3.png" id="7_hqd2i"]
+[ext_resource type="Script" path="res://Scripts/piojo.gd" id="7_iq5of"]
+[ext_resource type="PackedScene" uid="uid://b001x1vy32ufc" path="res://Scenes/Game.tscn" id="9_36bq8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u7cip"]
+radius = 0.24545
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8h1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_u481k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ti5m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hqd2i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nqmoh"]
+radius = 0.762314
+
+[node name="Main" type="Node3D"]
+
+[node name="View" type="Node3D" parent="."]
+transform = Transform3D(0.999682, -0.0144437, 0.0206285, 1.49012e-08, 0.819152, 0.573576, -0.0251826, -0.573395, 0.818892, 0, 1.65666, 0)
+
+[node name="Camera" type="Camera3D" parent="View"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+environment = ExtResource("1_x8oc8")
+fov = 40.0
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.642788, -0.586824, 0.492404, 0.681119, -0.143649, 0.717943, -0.350574, 0.796871, 0.492031, 0, 0, 0)
+shadow_enabled = true
+shadow_blur = 0.5
+
+[node name="Sample" type="Node3D" parent="."]
+
+[node name="Piojo" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("7_iq5of")
+
+[node name="Cuerpo" type="Marker3D" parent="Piojo"]
+
+[node name="Modelo" type="Node3D" parent="Piojo/Cuerpo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.255, -0.2)
+
+[node name="piojo_player" parent="Piojo/Cuerpo/Modelo" instance=ExtResource("4_a3q4e")]
+transform = Transform3D(0.334, 0, 0, 0, 0.334, 0, 0, 0, 0.334, 0, -0.143535, 0)
+
+[node name="Patas" type="Marker3D" parent="Piojo"]
+visible = false
+
+[node name="DF" parent="Piojo/Patas" instance=ExtResource("2_td380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524191, 0.0225172, -0.431898)
+script = ExtResource("5_ehnav")
+move_input = "move_d_"
+grab_input = "grab_df"
+max_length = 3.0
+
+[node name="Hombro" parent="Piojo/Patas/DF" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="DB" parent="Piojo/Patas" instance=ExtResource("2_td380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.674385, -0.183805, 0)
+script = ExtResource("5_ehnav")
+move_input = "move_d_"
+grab_input = "grab_db"
+max_length = 3.0
+axis = Vector2(1, -1)
+
+[node name="IF" parent="Piojo/Patas" instance=ExtResource("2_td380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50737, 0.0696495, 0)
+script = ExtResource("5_ehnav")
+move_input = "move_i_"
+grab_input = "grab_if"
+max_length = 3.0
+axis = Vector2(-1, 1)
+
+[node name="IB" parent="Piojo/Patas" instance=ExtResource("2_td380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.580249, -0.265821, 0)
+script = ExtResource("5_ehnav")
+move_input = "move_i_"
+grab_input = "grab_ib"
+max_length = 3.0
+axis = Vector2(-1, -1)
+
+[node name="Hitbox" type="CharacterBody3D" parent="Piojo"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piojo/Hitbox"]
+shape = SubResource("SphereShape3D_u7cip")
+
+[node name="LevelManager" type="Node" parent="." node_paths=PackedStringArray("piojo", "control")]
+script = ExtResource("4_2b0sq")
+piojo = NodePath("../Piojo")
+control = NodePath("../Control")
+
+[node name="SumergirseTimer" type="Timer" parent="LevelManager"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="EmergerTimer" type="Timer" parent="LevelManager"]
+wait_time = 3.0
+one_shot = true
+
+[node name="PoderPerderTimer" type="Timer" parent="LevelManager"]
+wait_time = 5.0
+autostart = true
+
+[node name="Finish" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85025, 2.49997, 0)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Finish"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_u8h1h")
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Finish"]
+shape = SubResource("SphereShape3D_nqmoh")
+
+[node name="Control" parent="." instance=ExtResource("9_36bq8")]
+
+[connection signal="timeout" from="LevelManager/SumergirseTimer" to="LevelManager" method="sumergirse"]
+[connection signal="timeout" from="LevelManager/EmergerTimer" to="LevelManager" method="emerger"]
+[connection signal="timeout" from="LevelManager/PoderPerderTimer" to="LevelManager" method="_on_poder_perder_timer_timeout"]
+[connection signal="area_entered" from="Finish" to="LevelManager" method="win"]
+[connection signal="body_entered" from="Finish" to="LevelManager" method="win"]
+
+[editable path="Piojo/Patas/DF"]
+[editable path="Piojo/Patas/DB"]
+[editable path="Piojo/Patas/IF"]
+[editable path="Piojo/Patas/IB"]

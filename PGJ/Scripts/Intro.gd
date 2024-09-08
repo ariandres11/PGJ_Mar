@@ -12,7 +12,10 @@ func _ready():
 	audio_player_2 = $AudioStreamPlayer2 # Reproduce el audio por 10 segundos
 	timer = $TimerTransicion1
 	timer_2 = $TimerPasarEscena
-	
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("confirm"): _on_saltar_intro_pressed()
+
 func _on_timer_timeout():
 	audio_player_1.stop()
 	_on_audio_stream_player_finished()

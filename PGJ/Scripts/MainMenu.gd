@@ -4,6 +4,10 @@ func _ready():
 	TranslationServer.set_locale(Globales.idioma)
 	set_idioma_escena()
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("start"): _on_boton_jugar_pressed()
+		
+	
 func set_idioma_escena()-> void:
 	$BotonesPrincipales/BotonJugar.text = tr("BotonJugar")
 	$BotonesPrincipales/BotonCreditos.text = tr("BotonCreditos")

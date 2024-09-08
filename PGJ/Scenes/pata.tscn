@@ -1,35 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://pkbkwdwravr0"]
+[gd_scene load_steps=2 format=3 uid="uid://pkbkwdwravr0"]
 
 [ext_resource type="Script" path="res://Scripts/pata.gd" id="1_5t7n1"]
-[ext_resource type="PackedScene" uid="uid://cpf3257qwkfl3" path="res://Assets/Models/piojo_pinzaD2.gltf" id="2_ycdd6"]
-[ext_resource type="PackedScene" uid="uid://crsdkiiewxam2" path="res://Assets/Models/piojo_pinzaD3.gltf" id="3_mnx5r"]
-[ext_resource type="PackedScene" uid="uid://f61qig71sitc" path="res://Assets/Models/piojo_pinzaI2.gltf" id="4_yfikf"]
-[ext_resource type="PackedScene" uid="uid://bgsgsxkrnwk8m" path="res://Assets/Models/piojo_pinzaI3.gltf" id="5_41s4h"]
 
 [node name="Pata" type="Marker3D"]
 script = ExtResource("1_5t7n1")
 
-[node name="Target" type="Marker3D" parent="."]
-
-[node name="Pinza" type="Marker3D" parent="."]
-
-[node name="piojo_pinzaD2" parent="Pinza" instance=ExtResource("2_ycdd6")]
-transform = Transform3D(0.334, 0, 0, 0, 0.334, 0, 0, 0, 0.334, -0.736594, -0.73614, 0)
-
-[node name="piojo_pinzaD3" parent="Pinza" instance=ExtResource("3_mnx5r")]
-transform = Transform3D(0.334, 0, 0, 0, 0.334, 0, 0, 0, 0.334, -0.935449, -0.408038, 0)
-
-[node name="piojo_pinzaI2" parent="Pinza" instance=ExtResource("4_yfikf")]
-transform = Transform3D(0.334, 0, 0, 0, 0.334, 0, 0, 0, 0.334, 0.738798, -0.737983, 0)
-
-[node name="piojo_pinzaI3" parent="Pinza" instance=ExtResource("5_41s4h")]
-transform = Transform3D(0.334, 0, 0, 0, 0.334, 0, 0, 0, 0.334, 0.927647, -0.40829, 0)
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Pinza"]
-visible = false
-radius = 0.1
-
 [node name="Hombro" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.885185)
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Hombro"]
 radius = 0.05

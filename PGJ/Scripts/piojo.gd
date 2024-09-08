@@ -1,6 +1,8 @@
 extends Node3D
 class_name Piojo
 
+@onready var piojo_player : PiojoPlayer = $Cuerpo/Modelo/piojo_player
+
 @export var speed: float = 2.0
 
 var grab_power: float = 0.0
@@ -11,6 +13,9 @@ var patas
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	patas = $Patas.get_children()
+	for p in patas:
+		p.pinza = piojo_player.get_target(p.name)
+		p.target = p.pinza
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
