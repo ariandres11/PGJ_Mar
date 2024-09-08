@@ -35,11 +35,11 @@ func _process(delta: float) -> void:
 	# Patita agarrada, fija en el espacio
 	if is_grabbed:
 		anchor_point = pinza.global_position
-		pinza.scale = Vector3.ONE * 0.8
+		# pinza.scale = Vector3.ONE * 0.8
 		return
 	
 	# Patita suelta, se puede mover
-	pinza.scale = Vector3.ONE
+	# pinza.scale = Vector3.ONE
 	
 	var move = Vector3(
 		Input.get_axis(move_input + "left",move_input + "right"),

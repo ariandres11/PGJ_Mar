@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 	move(move * delta * speed)
 
 func move(force: Vector3):
+	force.z = 0.0
 	global_position += force
 	
 	for p in patas:
