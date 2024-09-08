@@ -3,7 +3,7 @@
 [ext_resource type="Environment" uid="uid://namt0lkeifsl" path="res://Scenes/main-environment.tres" id="1_x8oc8"]
 [ext_resource type="PackedScene" uid="uid://pkbkwdwravr0" path="res://Scenes/pata.tscn" id="2_td380"]
 [ext_resource type="Script" path="res://Scripts/level_manager.gd" id="4_2b0sq"]
-[ext_resource type="PackedScene" uid="uid://us4s2t8xecca" path="res://Assets/Models/piojo_player.tscn" id="4_a3q4e"]
+[ext_resource type="PackedScene" path="res://Assets/Models/piojo_player.tscn" id="4_a3q4e"]
 [ext_resource type="Script" path="res://Scripts/pata_controller.gd" id="5_ehnav"]
 [ext_resource type="Texture2D" uid="uid://bcv68krko6ygx" path="res://Assets/Images/beacon_beacon1.png" id="5_u481k"]
 [ext_resource type="Texture2D" uid="uid://c6i20ty1xcout" path="res://Assets/Images/beacon_beacon2.png" id="6_ti5m7"]
