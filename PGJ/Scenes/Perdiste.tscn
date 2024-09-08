@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Perdiste.gd" id="1_mydpk"]
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="2_a1yra"]
-[ext_resource type="VideoStream" path="res://Animaciones/intro.ogv" id="2_gn1y1"]
+[ext_resource type="VideoStream" path="res://Animaciones/intro_inicial_lista.ogv" id="2_klxcs"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="3_a51eo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgqsk"]
@@ -36,7 +36,7 @@ offset_right = 745.0
 offset_bottom = 460.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_gn1y1")
+stream = ExtResource("2_klxcs")
 autoplay = true
 expand = true
 loop = true

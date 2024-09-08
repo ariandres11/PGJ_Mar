@@ -46,7 +46,7 @@ corner_radius_bottom_left = 40
 corner_detail = 10
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -342,11 +342,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_2i3eu")
 theme_override_font_sizes/font_size = 56
-theme_override_styles/focus = ExtResource("3_mqmfg")
-theme_override_styles/disabled = ExtResource("3_mqmfg")
+theme_override_styles/normal = ExtResource("3_mqmfg")
 theme_override_styles/hover = ExtResource("3_mqmfg")
 theme_override_styles/pressed = ExtResource("3_mqmfg")
-theme_override_styles/normal = ExtResource("3_mqmfg")
+theme_override_styles/disabled = ExtResource("3_mqmfg")
+theme_override_styles/focus = ExtResource("3_mqmfg")
 text = "Reiniciar
 "
 icon_alignment = 1
@@ -357,11 +357,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_2i3eu")
 theme_override_font_sizes/font_size = 56
-theme_override_styles/focus = ExtResource("3_mqmfg")
-theme_override_styles/disabled = ExtResource("3_mqmfg")
+theme_override_styles/normal = ExtResource("3_mqmfg")
 theme_override_styles/hover = ExtResource("3_mqmfg")
 theme_override_styles/pressed = ExtResource("3_mqmfg")
-theme_override_styles/normal = ExtResource("3_mqmfg")
+theme_override_styles/disabled = ExtResource("3_mqmfg")
+theme_override_styles/focus = ExtResource("3_mqmfg")
 text = "Salir al menú"
 expand_icon = true
 

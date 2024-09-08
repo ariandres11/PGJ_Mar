@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="5_3bitk"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="6_w03us"]
 
-[node name="Control" type="Control"]
+[node name="Control3" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,11 +63,11 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_3bitk")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = ExtResource("6_w03us")
-theme_override_styles/disabled = ExtResource("6_w03us")
+theme_override_styles/normal = ExtResource("6_w03us")
 theme_override_styles/hover = ExtResource("6_w03us")
 theme_override_styles/pressed = ExtResource("6_w03us")
-theme_override_styles/normal = ExtResource("6_w03us")
+theme_override_styles/disabled = ExtResource("6_w03us")
+theme_override_styles/focus = ExtResource("6_w03us")
 text = "Omitir intro
 "
 
