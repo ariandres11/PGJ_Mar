@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="3_2i3eu"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="3_mqmfg"]
 [ext_resource type="AudioStream" uid="uid://dxcqw0li8usiu" path="res://Audio/audio_oceano_afuera.mp3" id="5_bwl2k"]
-[ext_resource type="Script" path="res://Scenes/BarraAgarre.gd" id="6_080r6"]
+[ext_resource type="Script" path="res://Scripts/BarraAgarre.gd" id="6_080r6"]
 [ext_resource type="Texture2D" uid="uid://bkyonjoxhggoc" path="res://Iconos/flecha_juego.png" id="6_xveh2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqmyq"]

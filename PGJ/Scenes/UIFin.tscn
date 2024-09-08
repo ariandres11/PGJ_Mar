@@ -1,10 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbwoqtp30v4fx"]
 
-[ext_resource type="Script" path="res://Scenes/Ganaste.gd" id="1_7nsjy"]
+[ext_resource type="Script" path="res://Scripts/Ganaste.gd" id="1_7nsjy"]
 [ext_resource type="VideoStream" path="res://Animaciones/intro.ogv" id="2_hhdw4"]
 [ext_resource type="StyleBox" uid="uid://xj053q2yvb2t" path="res://Styles/ButtonStyleMainMenu.tres" id="2_tcbe6"]
 [ext_resource type="FontFile" uid="uid://nrp664l5g3ws" path="res://Fonts/Lilita_One,Rubik_Scribble/Lilita_One/LilitaOne-Regular.ttf" id="3_dx8ot"]
-[ext_resource type="Texture2D" uid="uid://byjad1xllxqga" path="res://Iconos/ej_icono_piojoagil.png" id="4_2462c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ldh0"]
 bg_color = Color(0.345098, 0.588235, 0.403922, 1)
@@ -14,6 +13,9 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 corner_detail = 10
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lrdm6"]
+load_path = "res://.godot/imported/ej_icono_piojoagil.png-c63af5f361ceb47e4d41d4ef49c6d727.ctex"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -151,7 +153,7 @@ offset_top = 576.0
 offset_right = 1714.0
 offset_bottom = 876.0
 rotation = 0.286234
-texture = ExtResource("4_2462c")
+texture = SubResource("CompressedTexture2D_lrdm6")
 expand_mode = 1
 
 [connection signal="pressed" from="VolverMenu" to="." method="_on_volver_menu_pressed"]

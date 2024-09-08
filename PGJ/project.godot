@@ -118,4 +118,4 @@ grab_if={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://traslate.eng.translation", "res://traslate.esp.translation")
+locale/translations=PackedStringArray("res://Traslate/traslate.eng.translation", "res://Traslate/traslate.esp.translation")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cus3lmp4hk4x1"]
 
-[ext_resource type="Script" path="res://Intro.gd" id="1_7o14h"]
+[ext_resource type="Script" path="res://Scripts/Intro.gd" id="1_0p8tp"]
 [ext_resource type="VideoStream" path="res://Animaciones/intro_lista_formato.ogv" id="2_shvix"]
 [ext_resource type="AudioStream" uid="uid://dxcqw0li8usiu" path="res://Audio/audio_oceano_afuera.mp3" id="3_i7eno"]
 [ext_resource type="AudioStream" uid="uid://t0hgifsewg7h" path="res://Audio/audio_oceano_4min_mp3.mp3" id="4_ubwvw"]
@@ -15,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-script = ExtResource("1_7o14h")
+script = ExtResource("1_0p8tp")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1

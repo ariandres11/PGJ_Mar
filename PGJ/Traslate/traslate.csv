@@ -1,0 +1,31 @@
+key;esp;eng
+BotonJugar;Jugar;Play
+BotonSalir;Salir;Quit
+BotonIdioma;Idioma;Language
+Cayendo;Cayendo;Falling
+BotonCreditos;Créditos;Credits
+BotonReiniciar;Reiniciar;Restart
+Modelado3D;Modelado 3D; 3D Artist
+Programador;Programador;Programmer
+DiseñadorUI;Diseñador UI;UI Designer
+Controles;Controles;Controls
+Izquierda;Izquierda;Left
+Derecha;Derecha;Right
+Arriba;Arriba;Top
+Abajo;Abajo;Bottom
+BotonVolver;Volver;Back
+Pausa;Pausa;Pause
+GanasteTitulo;¡Llegaste a la meta!; You reached the goal!
+GanasteP1;Pusiste tus huevos, ahora una nueva generación;You laid your eggs, now a new generation
+GanasteP2;de piojos está lista para conquistar  el mar argentino.;of lice is ready to conquer the Argentine sea.
+GanasteP3;¡Tu legado continúa!;Your legacy continues!
+PerdisteTitulo;¡No llegaste a la meta!;You didn´t reach the goal!
+Agarre;Agarre;Hold
+SeguroMoverte;Seguro moverte;Safe to move
+Sumergiendo;Sumergiendo;Dipping
+VolverMenu;Volver al menú;Back to menu
+VolverAIntentar;Volver a intentar;Try again
+PerdisteP1;¡No lograste mantenerte sujetado durante todo el trayecto!;You didn’t manage to hold on for the entire journey!
+PerdisteP2;No llegaste a poner huevos, más suerte la próxima;You didn’t get to lay eggs, better luck next time
+Omitir;Omitir intro;Skip intro
+
