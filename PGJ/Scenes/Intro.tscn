@@ -71,8 +71,13 @@ theme_override_styles/focus = ExtResource("6_w03us")
 text = "Omitir intro
 "
 
+[node name="TimerOcultarOmitirIntro" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="timeout" from="TimerTransicion1" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerPasarEscena" to="." method="_on_timer_pasar_escena_timeout"]
 [connection signal="pressed" from="SaltarIntro" to="." method="_on_saltar_intro_pressed"]
+[connection signal="timeout" from="TimerOcultarOmitirIntro" to="." method="_on_timer_ocultar_omitir_intro_timeout"]

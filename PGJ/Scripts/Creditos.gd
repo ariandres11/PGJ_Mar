@@ -2,7 +2,7 @@ extends Control
 
 func set_idioma_escena()-> void:
 	TranslationServer.set_locale(Globales.idioma)
-	$BotonVolver.text = tr("BotonVolverAMenu")
+	$BotonVolver.text = tr("VolverMenu")
 	$Panel/VBoxContainer/HBoxContainer5/Creditos.text = tr("BotonCreditos")
 	$Panel/VBoxContainer/HBoxContainer/Diseñador.text = tr("DiseñadorUI")
 	$Panel/VBoxContainer/HBoxContainer2/Programador.text = tr("Programador")
